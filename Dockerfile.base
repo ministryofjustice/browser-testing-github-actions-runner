@@ -18,7 +18,7 @@ RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen \
   && apt-get update \
   && apt-get install -y --no-install-recommends ca-certificates curl \
   && ( curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - ) \
-  && ( cd ~ && apt-get install -y --no-install-recommends nodejs && npm install playwright && npx playwright install --with-deps && npx playwright install --with-deps && rm -rf node_modules/ && npm cache clean --force ) \
+  && ( cd ~ && apt-get install -y --no-install-recommends nodejs && npm install playwright && npx playwright install-deps && npx playwright install --with-deps && rm -rf node_modules/ && npm cache clean --force ) \
   && apt-get install -y --no-install-recommends \
     gnupg \
     lsb-release \
