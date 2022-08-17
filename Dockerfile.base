@@ -37,7 +37,6 @@ RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen \
     libcurl4-openssl-dev \
     inetutils-ping \
     jq \
-    yq \
     wget \
     dirmngr \
     openssh-client \
@@ -56,6 +55,7 @@ RUN echo en_US.UTF-8 UTF-8 >> /etc/locale.gen \
   && ( [[ $(apt-cache search -n liblttng-ust0 | awk '{print $1}') == "liblttng-ust0" ]] && apt-get install -y --no-install-recommends liblttng-ust0 || : ) \
   && ( [[ $(apt-cache search -n liblttng-ust1 | awk '{print $1}') == "liblttng-ust1" ]] && apt-get install -y --no-install-recommends liblttng-ust1 || : ) \
   && ( ( curl "https://awscli.amazonaws.com/awscli-exe-linux-$(uname -m).zip" -o "awscliv2.zip" && unzip awscliv2.zip -d /tmp/ && /tmp/aws/install && rm awscliv2.zip) || pip3 install awscli ) \
+  && ( wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64; chmod a+x /usr/local/bin/yq ) \
   # Determine the Distro name (Debian, Ubuntu, etc)
   && distro=$(lsb_release -is | awk '{print tolower($0)}') \
   # Determine the Distro version (bullseye, xenial, etc)
