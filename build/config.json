@@ -86,6 +86,13 @@
       ]
     },
     {
+      "category": "playwright",
+      "source": "script",
+      "packages": [
+        "playwright"
+      ]
+    },
+    {
       "category": "powershell",
       "source": "script",
       "packages": [

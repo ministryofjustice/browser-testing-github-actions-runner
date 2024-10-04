@@ -86,6 +86,15 @@ function install_yq() {
   mv "/tmp/yq_linux_${DPKG_ARCH}" /usr/local/bin/yq
 }
 
+function install_playwright() {
+  echo Installing playwright...
+  export PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=true
+  npm install -g playwright
+  npx playwright install-deps
+  npm uninstall -g playwright
+  npm cache clean --force
+}
+
 function install_powershell() {
   local DPKG_ARCH PWSH_VERSION PWSH_DOWNLOAD_URL
 
