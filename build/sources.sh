@@ -34,6 +34,10 @@ function configure_docker() {
     | tee /etc/apt/sources.list.d/docker.list > /dev/null
 }
 
+function configure_nodejs() {
+  curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
+}
+
 function configure_container_tools() {
   # shellcheck source=/dev/null
   source /etc/os-release
@@ -50,6 +54,7 @@ function configure_container_tools() {
 function configure_sources() {
   configure_git
   configure_docker
+  configure_nodejs
   configure_container_tools
 }
 
