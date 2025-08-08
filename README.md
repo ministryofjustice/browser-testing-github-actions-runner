@@ -1,3 +1,9 @@
+> :memo: **This repository has been archived.**
+> 
+> Self-hosted runners are now provided at the organisation level. See https://tech-docs.hmpps.service.justice.gov.uk/shared-tooling/self-hosted-runners
+
+---
+
 GitHub Actions Runner Image for Web Browser Testing
 ===================================================
 
